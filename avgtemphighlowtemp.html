@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Lab5_Using arrays</title>
+<meta charset="utf-8">
+</head>
+<body>
+
+<!----Jenny Hayes 2/26/21  Storing average temperature in an array ---->
+
+   <script type="text/javascript">
+
+   let avgTemp=[];
+   let year=12;
+   let sum=0;
+   let avg;
+   let highTemp=-999;
+   let lowTemp= 999;
+   let difference;
+
+
+       for(let i=0; i<12; i++)
+         {
+           avgTemp[i]=parseInt(prompt("Enter the average temperature for each month",""));       // storing the average temperature in the array.
+
+
+           sum=sum+avgTemp[i];
+           avg=sum/year;                                  //getting the average temperature for the year.
+
+
+           if(avgTemp[i]>=highTemp)
+                highTemp=avgTemp[i];
+           if(avgTemp[i]<=lowTemp)
+              lowTemp=avgTemp[i];                            //getting the highest and lowest temperature
+         }
+
+        alert("The average temperature for the year is: " +avg);
+        alert("The highest temperature for the year is: " +highTemp);
+        alert("The lowest temperature for the year is: " +lowTemp);
+
+          document.write("<table border='1'>");
+          document.write("<tr><th>Monthly Temp</th><th>Average Temp</th><th>Difference</th></tr>");    // making a table to show the temperature differences
+
+         for(let i=0; i<avgTemp.length; i++)
+           {
+              difference=avgTemp[i]-avg;
+             document.write("<tr><td>"+avgTemp[i]+"</td><td>"+avg+"</td><td>"+difference+"</td></tr>");
+            }
+             document.write("</table>");
+
+
+
+
+    </script>
+  </body>
+</html>
